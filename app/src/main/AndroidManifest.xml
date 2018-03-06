@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.receiptdecoratorservice">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".ReceiptDecoratorService"
+            android:enabled="true"
+            android:exported="true">
+            <!-- define the intent filter with an action as IPoyntReceiptDecoratorService interface -->
+            <intent-filter>
+                <action android:name="co.poynt.os.services.v1.IPoyntReceiptDecoratorService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="co.poynt.os.service.capability"
+                android:resource="@xml/receipt_decorator_capability" />
+        </service>
+    </application>
+
+</manifest>
